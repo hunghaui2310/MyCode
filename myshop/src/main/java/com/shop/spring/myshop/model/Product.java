@@ -32,17 +32,6 @@ public class Product {
     @Column(name = "create_date", nullable = false)
     private Date createDate;
 
-    @Column(name = "size")
-    private String size;
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
     public Long getProductId() {
         return productId;
     }

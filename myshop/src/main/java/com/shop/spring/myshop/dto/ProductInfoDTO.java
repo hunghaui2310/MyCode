@@ -8,17 +8,8 @@ public class ProductInfoDTO {
     private Long productId;
     private String name;
     private double price;
-    private String size;
     private boolean newProduct = false;
     private CommonsMultipartFile fileData;
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
 
     public ProductInfoDTO() {
     }
