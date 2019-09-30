@@ -10,7 +10,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Trang đăng kí </title>
+    <title>Trang đăng nhập </title>
     <!-- Meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,64 +51,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div th:replace="~{client/header::header_content}"></div>
 <div th:replace="~{client/header::#header-bot}"></div>
 <div th:replace="~{client/header::#ban-top}"></div>
-    <h1 class="error">Gadget Sign Up Form</h1>
-	<!---728x90--->
-    <div class="w3layouts-two-grids">
-	<!---728x90--->
-        <div class="mid-class">
-            <div class="img-right-side">
-                <h3>Dễ dàng quản lý sản phẩm</h3>
-                <p>Giờ đây, bạn có thể dễ dàng quản lý giỏ hàng của mình bằng việc đăng kí ngay với chúng tôi.</p>
-                <img src="client/register/images/b11.png" class="img-fluid" alt="">
-            </div>
-            <div class="txt-left-side">
-                <h2> Sign Up Here </h2>
-                <form action="#" method="post">
-                    <div class="form-left-to-w3l">
-                        <span class="fa fa-user-o" aria-hidden="true"></span>
-                        <input type="text" name="Name" placeholder=" Tên đăng nhập..." required="">
-
-                        <div class="clear"></div>
-                    </div>
-                    <div class="form-left-to-w3l">
-                        <span class="fa fa-phone" aria-hidden="true"></span>
-                        <input type="text" name="Phone" placeholder="Số điện thoại..." required="">
-
-                        <div class="clear"></div>
-                    </div>
-                    <div class="form-left-to-w3l ">
-
-                        <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="password" placeholder="Mật khẩu..." required="">
-                        <div class="clear"></div>
-                    </div>
-                    <div class="form-left-to-w3l ">
-
-                        <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="password" placeholder="Xác nhận mật khẩu..." required="">
-                        <div class="clear"></div>
-                    </div>
-                    <div class="main-two-w3ls">
-                        <div class="left-side-forget">
-                            <input type="checkbox">
-                            <span>Tôi đồng ý với <a href="/service">điều khoản & dịch vụ</a></span>
-                        </div>
-                    </div>
-                    <div class="btnn">
-                        <button type="submit">Đăng kí </button>
-                    </div>
-                </form>
-                <div class="w3layouts_more-buttn">
-                    <h3>Bạn đã có tài khoản
-                        <a href="#">Đăng nhập
-                        </a>
-                    </h3>
+<h1 class="error">Gadget Sign Up Form</h1>
+<!---728x90--->
+<div class="w3layouts-two-grids">
+    <!---728x90--->
+    <div class="mid-class">
+        <div class="img-right-side">
+            <h3>WELCOME!</h3>
+            <p>Đăng nhập ngay để nhận hàng ngàn ưu đãi lớn.</p>
+            <img src="client/register/images/b11.png" class="img-fluid" alt="">
+        </div>
+        <div class="txt-left-side">
+            <h2> Sign Up Here </h2>
+            <form action="#" method="post">
+                <div class="form-left-to-w3l">
+                    <span class="fa fa-user-o" aria-hidden="true"></span>
+                    <input type="text" name="Name" placeholder=" Tên đăng nhập..." required="">
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
+                <div class="form-left-to-w3l ">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <input type="password" name="password" placeholder="Mật khẩu..." required="">
+                    <div class="clear"></div>
+                </div>
+                <div class="main-two-w3ls">
+                    <div class="left-side-forget">
+                        <input type="checkbox" class="checked">
+                        <span class="remember-me">Remember me </span>
+                    </div>
+                </div>
+                <div class="btnn">
+                    <button type="submit">Đăng nhập </button>
+                </div>
+            </form>
+            <div class="w3layouts_more-buttn">
+                <h3>Bạn chưa có tài khoản
+                    <a href="/register">Đăng kí
+                    </a>
+                </h3>
             </div>
+            <div class="clear"></div>
         </div>
     </div>
-	<!---728x90--->
+</div>
+<!---728x90--->
 <div th:replace="~{client/header::#top-footer}"></div>
 <div th:replace="~{client/header::#footer}"></div>
 </body>

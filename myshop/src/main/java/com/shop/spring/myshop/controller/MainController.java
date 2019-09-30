@@ -20,13 +20,23 @@ public class MainController {
     }
 
     @GetMapping("/register")
-    public String login(Model model) {
+    public String register(Model model) {
         return "client/register";
     }
 
     @GetMapping("/forgot-password")
     public String forgotPassword(Model model) {
         return "client/forgot-password";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model){
+        return "client/login";
+    }
+
+    @GetMapping("/order")
+    public String order(Model model){
+        return "client/order";
     }
 
     @GetMapping("/about")

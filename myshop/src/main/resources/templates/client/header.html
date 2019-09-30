@@ -34,9 +34,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header" th:fragment="header_content">
     <div class="container">
         <ul>
-            <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">info@example.com</a></li>
-            <li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Miễn phí vận chuyển</li>
-            <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">info@example.com</a></li>
+            <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 12 đường 12, thị trấn Gôi, Vụ Bản, Nam Định.</li>
+            <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email : <a href="mailto:info@example.com">dogohuyhung@gmail.com</a></li>
+            <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>Phone : +1234 567 567</li>
         </ul>
     </div>
 </div>
@@ -50,16 +50,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-6 header-middle">
             <form>
                 <div class="search">
-                    <input type="search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
+                    <input type="search" value="Tìm kiếm..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
                 </div>
                 <div class="section_room">
                     <select id="country" onchange="change_country(this.value)" class="frm-field required">
-                        <option value="null">Taats</option>
-                        <option value="null">Electronics</option>
-                        <option value="AX">kids Wear</option>
-                        <option value="AX">Men's Wear</option>
-                        <option value="AX">Women's Wear</option>
-                        <option value="AX">Watches</option>
+                        <option value="null">Thể loại</option>
+                        <option value="null">Bàn ghế phòng khách</option>
+                        <option value="AX">Bàn ghế phòng bếp</option>
+                        <option value="AX">Tủ quần áo</option>
+                        <option value="AX">Kệ tivi.</option>
+                        <option value="AX">Giường</option>
                     </select>
                 </div>
                 <div class="sear-sub">
@@ -70,13 +70,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="col-md-3 header-right footer-bottom">
             <ul>
-                <li><a href="/login" class="use1" data-toggle="modal" data-target="#myModal4"><span>Đăng nhập</span></a>
-
-                </li>
-                <li><a class="fb" href="#"></a></li>
-                <li><a class="twi" href="#"></a></li>
-                <li><a class="insta" href="#"></a></li>
-                <li><a class="you" href="#"></a></li>
+                <li><a href="/login" class="use1" data-toggle="modal" data-target="#myModal4"><span>Đăng nhập</span></a></li>
+                <li><a class="fb" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
+                <li><a class="twi" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
+                <li><a class="insta" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
+                <li><a class="you" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
             </ul>
         </div>
         <div class="clearfix"></div>
@@ -163,8 +161,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </ul>
                             </li>
-                            <li class=" menu__item"><a class="menu__link" href="electronics.html">Đặt hàng</a></li>
-                            <li class=" menu__item"><a class="menu__link" href="codes.html">Thông tin</a></li>
+                            <li class=" menu__item"><a class="menu__link" href="/electronics">Đặt hàng</a></li>
+                            <li class=" menu__item"><a class="menu__link" href="/codes">Thông tin</a></li>
                             <li class=" menu__item"><a class="menu__link" href="/contact">Liên hệ</a></li>
                         </ul>
                     </div>
@@ -192,13 +190,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="coupons-grids text-center">
             <div class="col-md-3 coupons-gd">
-                <h3>Buy your product in a simple way</h3>
+                <h3>MUA SẢN PHẨM DỄ DÀNG HƠN</h3>
             </div>
             <div class="col-md-3 coupons-gd">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <h4>LOGIN TO YOUR ACCOUNT</h4>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-                    sit amet, consectetur.</p>
+                <h4>ĐĂNG NHẬP VÀO TÀI KHOẢN</h4>
+                <p>Giờ đây, bạn có thể mua bất kì sản phẩm nào ngay tại nhà.</p>
             </div>
             <div class="col-md-3 coupons-gd">
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
@@ -251,7 +248,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-4 sign-gd-two">
                     <h4>Store Information</h4>
                     <ul>
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Địa chỉ : 12 đường 12, thị trấn Gôi, Vụ Bản, Nam Định <span>Newyork City.</span></li>
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Địa chỉ : 12 đường 12, thị trấn Gôi, Vụ Bản, Nam Định.</li>
                         <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">dogohuyhung@gmail.com</a></li>
                         <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
                     </ul>
