@@ -1,7 +1,6 @@
 package com.shop.spring.myshop.dto;
 
 import com.shop.spring.myshop.model.Product;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class ProductInfoDTO {
 
@@ -9,7 +8,8 @@ public class ProductInfoDTO {
     private String name;
     private double price;
     private boolean newProduct = false;
-    private CommonsMultipartFile fileData;
+    private byte[] image;
+//    private CommonsMultipartFile fileData;
 
     public ProductInfoDTO() {
     }
@@ -20,10 +20,11 @@ public class ProductInfoDTO {
         this.price = product.getPrice();
     }
 
-    public ProductInfoDTO(Long productId, String name, double price) {
+    public ProductInfoDTO(Long productId, String name, double price, byte[] image) {
         this.productId = productId;
         this.name = name;
         this.price = price;
+        this.image = image;
     }
 
     public Long getProductId() {
@@ -58,11 +59,19 @@ public class ProductInfoDTO {
         this.newProduct = newProduct;
     }
 
-    public CommonsMultipartFile getFileData() {
-        return fileData;
+//    public CommonsMultipartFile getFileData() {
+//        return fileData;
+//    }
+//
+//    public void setFileData(CommonsMultipartFile fileData) {
+//        this.fileData = fileData;
+//    }
+
+    public byte[] getImage() {
+        return image;
     }
 
-    public void setFileData(CommonsMultipartFile fileData) {
-        this.fileData = fileData;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
