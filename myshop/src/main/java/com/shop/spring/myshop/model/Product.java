@@ -8,7 +8,8 @@ import java.util.Date;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "product_id", nullable = false)
     private Long productId;
 
@@ -31,6 +32,10 @@ public class Product {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date", nullable = false)
     private Date createDate;
+
+    @ManyToOne
+    @JoinColumn
+    private Category category;
 
     public Long getProductId() {
         return productId;
