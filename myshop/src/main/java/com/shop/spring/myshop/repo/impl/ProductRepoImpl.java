@@ -2,8 +2,7 @@ package com.shop.spring.myshop.repo.impl;
 
 import com.shop.spring.myshop.dto.ProductInfoDTO;
 import com.shop.spring.myshop.jdbc.JDBCConnection;
-import com.shop.spring.myshop.model.Product;
-import com.shop.spring.myshop.repo.ProductRepo;
+import com.shop.spring.myshop.repo.ProductRepoCustom;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class ProductRepoImpl extends JDBCConnection implements ProductRepo {
+public class ProductRepoImpl extends JDBCConnection implements ProductRepoCustom {
 
     @Override
     public List<ProductInfoDTO> showProduct() {
