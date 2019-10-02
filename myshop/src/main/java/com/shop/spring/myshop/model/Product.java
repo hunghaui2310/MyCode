@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "product")
+@Table(name = "product",uniqueConstraints = { @UniqueConstraint(name = "USER_ROLE_PK", columnNames = "category_id") })
 public class Product {
 
     @Id
@@ -33,9 +33,17 @@ public class Product {
     @Column(name = "create_date", nullable = false)
     private Date createDate;
 
-    @ManyToOne
-    @JoinColumn
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Long getProductId() {
         return productId;

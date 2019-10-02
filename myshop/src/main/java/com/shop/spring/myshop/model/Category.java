@@ -16,8 +16,7 @@ public class Category {
     @Column(name = "category_name", nullable = false)
     private String categoryName;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<Product> products;
+
 
     public Long getCategoryId() {
         return categoryId;

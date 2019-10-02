@@ -81,17 +81,17 @@ alter table order_detail
         foreign key (PRODUCT_ID)
         references Product (product_id);
 
-insert into realmen.product (product_name, price,des,image, CREATE_DATE, num_like)
-values ('Quan 1', 100,'san pham chat luong1',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2019-09-12',111),
-	('Quan 2', 200,'san pham chat luong2',LOAD_FILE('C:/Users/Admin/Downloads/4.jpg'), '2019-06-12',1000),
-    ('Quan 3', 300,'san pham chat luong3',LOAD_FILE('C:/Users/Admin/Downloads/5.jpg'), '2019-07-12',300),
-    ('Quan 4', 400,'san pham chat luong4',LOAD_FILE('C:/Users/Admin/Downloads/6.jpg'), '2018-09-12',500),
-    ('Ao 1', 500,'san pham chat luong5',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2017-09-12',600),
-    ('Ao 2', 600,'san pham chat luong6',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2019-09-20',320),
-    ('Ao 3', 100,'san pham chat luong7',LOAD_FILE('C:/Users/Admin/Downloads/4.jpg'), '2019-01-12',700),
-    ('Giay 1', 100,'san pham rat chat luong',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2018-07-12',20),
-    ('Giay 2', 100,'san pham rat chat luong',LOAD_FILE('C:/Users/Admin/Downloads/5.jpg'), '2019-01-12',2000),
-    ('Giay 3', 100,'san pham rat chat luong',LOAD_FILE('C:/Users/Admin/Downloads/6.jpg'), '2019-11-12',400);
+insert into dogohuyhung.product (product_name, price,des,image, CREATE_DATE, num_like,category_id)
+values ('Quan 1', 100,'san pham chat luong1',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2019-09-12',111,1),
+	('Quan 2', 200,'san pham chat luong2',LOAD_FILE('C:/Users/Admin/Downloads/4.jpg'), '2019-06-12',1000,2),
+    ('Quan 3', 300,'san pham chat luong3',LOAD_FILE('C:/Users/Admin/Downloads/5.jpg'), '2019-07-12',300,1),
+    ('Quan 4', 400,'san pham chat luong4',LOAD_FILE('C:/Users/Admin/Downloads/6.jpg'), '2018-09-12',500,3),
+    ('Ao 1', 500,'san pham chat luong5',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2017-09-12',600,4),
+    ('Ao 2', 600,'san pham chat luong6',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2019-09-20',320,1),
+    ('Ao 3', 100,'san pham chat luong7',LOAD_FILE('C:/Users/Admin/Downloads/4.jpg'), '2019-01-12',700,2),
+    ('Giay 1', 100,'san pham rat chat luong',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2018-07-12',20,3),
+    ('Giay 2', 100,'san pham rat chat luong',LOAD_FILE('C:/Users/Admin/Downloads/5.jpg'), '2019-01-12',2000,4),
+    ('Giay 3', 100,'san pham rat chat luong',LOAD_FILE('C:/Users/Admin/Downloads/6.jpg'), '2019-11-12',400,2);
     
 create table category(
 	category_id bigint(100) NOT NULL auto_increment,

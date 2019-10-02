@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class AppUser implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "user_id", nullable = false)
     private Long userId;
