@@ -5,9 +5,9 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Smart Shop a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Check Out :: w3layouts</title>
+<title>Đồ gỗ Huy Hùng</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,20 +16,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="client/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="client/js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
 <!-- cart -->
-	<script src="js/simpleCart.min.js"></script>
+	<script src="client/js/simpleCart.min.js"></script>
 <!-- cart -->
 <!-- for bootstrap working -->
-	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+	<script type="text/javascript" src="client/js/bootstrap-3.1.1.min.js"></script>
 <!-- //for bootstrap working -->
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
-<script src="js/jquery.easing.min.js"></script>
+<script src="client/js/jquery.easing.min.js"></script>
 </head>
 <body>
 <!-- header -->
@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header-bot">
 	<div class="container">
 		<div class="col-md-3 header-left">
-			<h1><a href="index.html"><img src="images/logo3.jpg"></a></h1>
+			<h1><a href="index.html"><img src="client/images/logo3.jpg"></a></h1>
 		</div>
 		<div class="col-md-6 header-middle">
 			<form>
@@ -164,7 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</ul>
 									</div>
 									<div class="col-sm-6 multi-gd-img multi-gd-text ">
-										<a href="womens.html"><img src="images/woo.jpg" alt=" "/></a>
+										<a href="womens.html"><img src="client/images/woo.jpg" alt=" "/></a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -180,7 +180,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="top_nav_right">
 			<div class="cart box_1">
-						<a href="checkout.html">
+						<a href="cart.html">
 							<h3> <div class="total">
 								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
 								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
@@ -231,7 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						   </script>
 						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/w4.png" alt=" " class="img-responsive" /></a></td>
+						<td class="invert-image"><a href="single.html"><img src="client/images/w4.png" alt=" " class="img-responsive" /></a></td>
 						<td class="invert">
 							 <div class="quantity"> 
 								<div class="quantity-select">                           
@@ -258,7 +258,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						   </script>
 						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/ep3.png" alt=" " class="img-responsive" /></a></td>
+						<td class="invert-image"><a href="single.html"><img src="client/images/ep3.png" alt=" " class="img-responsive" /></a></td>
 						<td class="invert">
 							 <div class="quantity"> 
 								<div class="quantity-select">                           
@@ -286,7 +286,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						   </script>
 						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/w2.png" alt=" " class="img-responsive" /></a></td>
+						<td class="invert-image"><a href="single.html"><img src="client/images/w2.png" alt=" " class="img-responsive" /></a></td>
 						<td class="invert">
 							 <div class="quantity"> 
 								<div class="quantity-select">                           
@@ -314,7 +314,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								});
 						   </script>
 						</td>
-						<td class="invert-image"><a href="single.html"><img src="images/w1.png" alt=" " class="img-responsive" /></a></td>
+						<td class="invert-image"><a href="single.html"><img src="client/images/w1.png" alt=" " class="img-responsive" /></a></td>
 						<td class="invert">
 							 <div class="quantity"> 
 								<div class="quantity-select">                           
@@ -397,7 +397,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 footer-left">
-			<h2><a href="index.html"><img src="images/logo3.jpg" alt=" " /></a></h2>
+			<h2><a href="index.html"><img src="client/images/logo3.jpg" alt=" " /></a></h2>
 			<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
 			sit amet, consectetur, adipisci velit, sed quia non 
 			numquam eius modi tempora incidunt ut labore 
@@ -438,15 +438,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 sign-gd flickr-post">
 					<h4>Flickr Posts</h4>
 					<ul>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b17.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b18.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b16.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b17.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b18.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b16.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b17.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b18.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="client/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
