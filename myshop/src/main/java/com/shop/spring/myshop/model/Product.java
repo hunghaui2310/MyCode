@@ -77,14 +77,6 @@ public class Product {
         this.description = description;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
     public Long getNumLike() {
         return numLike;
     }
@@ -99,5 +91,26 @@ public class Product {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public Product(String productName, double price, String description, byte[] image, Long numLike, Date createDate, Category category) {
+        this.productName = productName;
+        this.price = price;
+        this.description = description;
+        this.image = image;
+        this.numLike = numLike;
+        this.createDate = createDate;
+        this.category = category;
+    }
+
+    public Product() {
     }
 }
