@@ -7,11 +7,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
 
     @Query(CustomQuery.SEARCH_PRODUCT)
-    public Page<Product> searchProduct(Pageable pageable, @Param("text") String text);
+    Page<Product> searchProduct(Pageable pageable, @Param("text") String text);
+
+    @Query(value = "select * from Product p where p.productId = productId", nativeQuery = true)
+    Product getByProductId(@Param("productId") Long productId);
 
 }

@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -32,8 +33,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product getByProductId(Long productId) {
+        return productRepo.getByProductId(productId);
+    }
+
+    @Override
     public Page<Product> searchProduct(Pageable pageable, String text) {
         return productRepo.searchProduct(pageable, "%"+text.trim()+"%");
+    }
+
+    @Override
+    public Optional<Product> getProId(Long productId) {
+        return productRepo.findById(productId);
     }
 
 }

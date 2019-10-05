@@ -6,12 +6,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductService {
 
-    public List<ProductInfoDTO> showInfoProduct();
+    List<ProductInfoDTO> showInfoProduct();
 
-    public List<Product> getAll();
+    List<Product> getAll();
 
-    public Page<Product> searchProduct(Pageable pageable, String text);
+    Product getByProductId(Long productId);
+
+    Page<Product> searchProduct(Pageable pageable, String text);
+
+    Optional<Product> getProId(Long productId);
 }

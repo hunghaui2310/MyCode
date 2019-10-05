@@ -8,7 +8,7 @@ import java.util.Date;
 public class Order {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "order_id", nullable = false)
     private Long orderId;

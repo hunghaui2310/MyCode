@@ -16,7 +16,7 @@ Desc realmen.app_user;
 insert into realmen.app_User (phone_number, email,avatar,address, ENCRYTED_PASSWORD, ENABLED) 
 values ('0364516673','hunghomhinh2310@gmail.com',LOAD_FILE('C:/Users/Admin/Downloads/1.jpg'),'kieu mai, ha noi', '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 1),
 	('0367786012','hunghaui2310@gmail.com',LOAD_FILE('C:/Users/Admin/Downloads/2.jpg'),'cau giay, ha noi', '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 1);
-
+select * from realmen.app_user;
 create table app_role(
 	role_id bigint auto_increment,
     role_name varchar(50) not null,

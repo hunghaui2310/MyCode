@@ -33,7 +33,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <!-- header -->
 <div th:replace="~{client/header::header_content}"></div>
-<div th:replace="~{client/header::#header-bot}"></div>
+<div class="header-bot" id="header-bot">
+	<div class="container">
+		<div class="col-md-3 header-left">
+			<h1><a href="/home"><img src="client/images/logo3.jpg"></a></h1>
+		</div>
+		<div class="col-md-6 header-middle">
+			<form th:action="@{/(page=0)}" method="get">
+				<div class="search">
+					<input type="search" value= "Tìm kiếm..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required=""th:attr="value=${searchText}">
+				</div>
+				<div class="sear-sub">
+					<input type="submit" value=" ">
+				</div>
+				<div class="clearfix"></div>
+			</form>
+		</div>
+		<div class="col-md-3 header-right footer-bottom">
+			<ul>
+				<li><a th:href="@{/login}" class="use1" data-toggle="modal" data-target="#myModal4"><span>Đăng nhập</span></a></li>
+				<li><a class="fb" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
+				<li><a class="twi" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
+				<li><a class="insta" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
+				<li><a class="you" href="#" data-toggle="modal" data-target="#myModel4"><span></span></a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
 <div th:replace="~{client/header::#ban-top}"></div>
 <!-- //banner-top -->
 <!-- banner -->
@@ -116,14 +143,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<img src="client/images/mw2.png" alt="" class="pro-image-back" th:utext="${product.image}">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Xem chi tiết</a>
+											<a th:href="@{/showProduct}" class="link-product-add-cart">Xem chi tiết</a>
 										</div>
 									</div>
 									<span class="product-new-top">Mới</span>
 
 								</div>
 								<div class="item-info-product ">
-									<h4><a href="single.html" th:utext="${product.productName}"></a></h4>
+									<h4><a th:href="@{/showProduct}" th:utext="${product.productName}"></a></h4>
 									<div class="info-product-price" th:utext="${product.price}">
 										<span class="item_price">$45.99</span>
 										<del>$69.71</del>
@@ -132,11 +159,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</div>
-						<nav class="col-md-6" aria-label="..." style="margin-top: 20px;">
-							<ul class="pagination" style="float: right;">
+						<div class="clearfix"></div>
+						<div class="pagination-grid text-right">
+							<ul class="pagination paging" style="float: right;">
 								<li
 										th:class="${currentIndex == 1}? 'page-item disabled' : 'page-item'">
-									<a class="page-link" th:href="@{/product}">First</a>
+									<a class="page-link" th:href="@{/}">First</a>
 								</li>
 								<li
 										th:class="${currentIndex == 1}? 'page-item disabled': 'page-item' ">
@@ -170,8 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a class="page-link" th:href="@{|${baseUrl}${totalPageCount-1}|}">Last</a>
 								</li>
 							</ul>
-						</nav>
-						<div class="clearfix"></div>
+						</div>
 					</div>
 					<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
 						<div class="col-md-3 product-men">
