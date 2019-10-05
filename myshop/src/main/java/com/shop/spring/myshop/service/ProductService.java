@@ -10,13 +10,13 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    List<ProductInfoDTO> showInfoProduct();
-
     List<Product> getAll();
-
-    Product getByProductId(Long productId);
 
     Page<Product> searchProduct(Pageable pageable, String text);
 
     Optional<Product> getProId(Long productId);
+
+    void deleteProduct(Long productId);
+
+    Product getOneProduct(Long id);
 }

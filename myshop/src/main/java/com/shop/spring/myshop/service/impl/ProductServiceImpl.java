@@ -23,18 +23,8 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepo productRepo;
 
     @Override
-    public List<ProductInfoDTO> showInfoProduct() {
-        return productRepoCustom.showProduct();
-    }
-
-    @Override
     public List<Product> getAll() {
         return productRepo.findAll();
-    }
-
-    @Override
-    public Product getByProductId(Long productId) {
-        return productRepo.getByProductId(productId);
     }
 
     @Override
@@ -45,6 +35,16 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Optional<Product> getProId(Long productId) {
         return productRepo.findById(productId);
+    }
+
+    @Override
+    public void deleteProduct(Long productId) {
+        productRepo.deleteById(productId);
+    }
+
+    @Override
+    public Product getOneProduct(Long id) {
+        return productRepo.getOne(id);
     }
 
 }

@@ -623,11 +623,41 @@
 
                               <div class="pull-right">
                                   <ul class="pagination pagination-sm pro-page-list">
-
-                                      <li><a href="#">1</a></li>
-                                      <li><a href="#">2</a></li>
-                                      <li><a href="#">3</a></li>
-                                      <li><a href="#">»</a></li>
+                                      <li
+                                              th:class="${currentIndex == 1}? 'page-item disabled' : 'page-item'">
+                                          <a class="page-link" th:href="@{/admin/product}">First</a>
+                                      </li>
+                                      <li
+                                              th:class="${currentIndex == 1}? 'page-item disabled': 'page-item' ">
+                                          <a class="page-link" aria-label="Previous"
+                                             th:href="@{|${baseUrl}${currentIndex-2}${searchUrl}|}"
+                                             title='Go to previous page'><span aria-hidden="true">«</span>
+                                              <span class="sr-only">Previous</span></a>
+                                      </li>
+                                      <li th:each="item : ${#numbers.sequence(beginIndex,endIndex)}"
+                                          th:class="${item == currentIndex ? 'page-item active' :'page-item' }">
+                                          <a class="page-link"
+                                             th:href="@{|${baseUrl}${item-1}${searchUrl}|}"> <span
+                                                  th:text='${item}'>1</span>
+                                          </a>
+                                      </li>
+                                      <li class="page-item disabled" th:if="${extra}"><a
+                                              class="page-link" href=""> <span>...</span>
+                                      </a></li>
+                                      <li th:if="${checkLast}" class="page-item"><a
+                                              class="page-link" th:href="@{|${baseUrl}${totalPageCount-1}|}">
+                                          <span th:text='${totalPageCount}'>6</span>
+                                      </a></li>
+                                      <li
+                                              th:class="${currentIndex == totalPageCount || totalPageCount == 0}? 'page-item disabled': 'page-item'">
+                                          <a class="page-link" aria-label="Next" title='Go to next page'
+                                             th:href="@{|${baseUrl}${currentIndex}${searchUrl}|}"><span
+                                                  aria-hidden="true">»</span> <span class="sr-only">Next</span></a>
+                                      </li>
+                                      <li
+                                              th:class="${currentIndex == totalPageCount || totalPageCount == 0}? 'page-item disabled':'page-item'">
+                                          <a class="page-link" th:href="@{|${baseUrl}${totalPageCount-1}|}">Last</a>
+                                      </li>
                                   </ul>
                               </div>
                           </div>
@@ -649,7 +679,9 @@
                                       </h4>
                                       <p class="price" th:utext="${item.price}"></p>
                                       <button>Edit</button>
-                                      <button>Delete</button>
+                                      <a class="btn btn-danger text-white eBtn"
+                                              th:href="@{/find-product(id=${item.productId})}"><i
+                                              class="fas fa-trash"></i>Xóa</a>
                                   </div>
                               </section>
                           </div>
@@ -660,7 +692,38 @@
           </section>
       </section>
       <!--main content end-->
-
+<!--   start delete form-->
+      <div class="modal fade" tabindex="-1" id="deleteModal" role="dialog">
+          <div class="modal-dialog" role="document" style="margin-top: 100px">
+              <form
+                      th:action="@{/delete-product(page=${currentIndex-1},text=${searchText})}"
+                      method="post">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title">Xác nhận xóa</h5>
+                          <button type="button" class="close" data-dismiss="modal"
+                                  aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <p>
+                              <i class="fas fa-exclamation-triangle text-warning"
+                                 style="margin-right: 5px"></i>Bạn có chắc chắn muốn xóa?
+                               <input type="text" name="id" id="delete_id"
+                                                style="display: none;">
+                          </p>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-success"
+                                  data-dismiss="modal">Hủy</button>
+                          <button type="submit" class="btn btn-danger">Xóa</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+<!--      end delete form-->
       <!-- Right Slidebar start -->
       <div class="sb-slidebar sb-right sb-style-overlay">
           <h5 class="side-title">Online Customers</h5>
