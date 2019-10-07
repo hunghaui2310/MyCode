@@ -1,4 +1,4 @@
-package com.shop.spring.myshop.controller;
+package com.shop.spring.myshop.controller.admin;
 
 import com.shop.spring.myshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ProductController {
+public class ProductAdminController {
 
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(value = {"/showProduct"}, method = RequestMethod.GET)
-    public String showProduct(@RequestParam(name = "productId", defaultValue = "1") Long productId, Model model){
-        model.addAttribute("products", productService.getProductByQuery(productId));
-        return "client/single";
+    @RequestMapping(value = {"/product-detail"} , method = RequestMethod.GET)
+    public String getProduct(Model model, @RequestParam(name = "productId") Long productId) {
+        model.addAttribute("product", productService.getProductByQuery(productId));
+        return "admin/product_details";
     }
 }

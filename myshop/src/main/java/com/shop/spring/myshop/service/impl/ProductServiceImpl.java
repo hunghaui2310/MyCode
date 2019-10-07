@@ -17,9 +17,6 @@ import java.util.Optional;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepoImpl productRepoCustom;
-
-    @Autowired
     private ProductRepo productRepo;
 
     @Override
@@ -45,6 +42,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getOneProduct(Long id) {
         return productRepo.getOne(id);
+    }
+
+    @Override
+    public Product getProductByQuery(Long productId) {
+        return productRepo.getByProductId(productId);
     }
 
 }

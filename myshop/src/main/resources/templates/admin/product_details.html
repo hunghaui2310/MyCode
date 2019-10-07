@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  
+<!-- Mirrored from thevectorlab.net/flatlab/product_details.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Aug 2015 03:47:44 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="admin/img/favicon.html">
+
+    <title>Chi tiết sản phẩm</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet"/>
+    <!--right slidebar-->
+    <link href="css/slidebars.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="admin/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" class="">
+      <!--header start-->
+      <div th:replace="~{admin/starter::#header}"></div>
+      <div th:replace="~{admin/starter::#aside}"></div>
+      <!--sidebar end-->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+              <!-- page start-->
+              <section class="panel">
+                  <header class="panel-heading">
+                      Projects Details
+                      <span class="pull-right">
+                          <button type="button" id="loading-btn" class="btn btn-warning btn-xs"><i class="fa fa-refresh"></i> Refresh</button>
+                      </span>
+                  </header>
+
+              </section>
+              <div class="row">
+                  <div class="col-md-8">
+                      <section class="panel">
+                          <div class="bio-graph-heading project-heading">
+                              <strong> [ New Dashboard BS3 ] </strong>
+                          </div>
+                          <div class="panel-body bio-graph-info">
+                              <!--<h1>New Dashboard BS3 </h1>-->
+                              <div class="row p-details">
+                                  <div class="bio-row">
+                                      <p><span class="bold">Created by </span>: Jonathan Smith</p>
+                                  </div>
+                                  <div class="bio-row">
+                                      <p><span class="bold">Status </span>: <span class="label label-primary">Active</span></p>
+                                  </div>
+                                  <div class="bio-row">
+                                      <p><span class="bold">Created </span>: 13.05.2014 10:16:23</p>
+                                  </div>
+                                  <div class="bio-row">
+                                      <p><span class="bold">Last Updated</span>: 22.08.2014 03:11:45</p>
+                                  </div>
+                                  <div class="bio-row">
+                                      <p><span class="bold">Client </span>: <a href="#">Themeforest</a></p>
+                                  </div>
+                                  <div class="bio-row">
+                                      <p><span class="bold">Version </span>: v.2.3</p>
+                                  </div>
+                                  <div class="bio-row">
+                                      <p><span class="bold">Participants </span>:
+                                      <span class="p-team">
+                                          <a href="#"><img alt="image" class="" src="img/chat-avatar.jpg"></a>
+                                          <a href="#"><img alt="image" class="" src="img/chat-avatar2.jpg"></a>
+                                          <a href="#"><img alt="image" class="" src="img/pro-ac-1.png"></a>
+                                      </span>
+                                      </p>
+                                  </div>
+
+                                  <div class="col-lg-12">
+                                      <dl class="dl-horizontal mtop20 p-progress">
+                                          <dt>Project Completed:</dt>
+                                          <dd>
+                                              <div class="progress progress-striped active ">
+                                                  <div style="width: 80%;" class="progress-bar progress-bar-success"></div>
+                                              </div>
+                                              <small>Project completed in <strong>80%</strong>. Remaining close the project, sign a contract and invoice.</small>
+                                          </dd>
+                                      </dl>
+                                  </div>
+                              </div>
+
+                          </div>
+
+                      </section>
+
+                      <section class="panel">
+                        <header class="panel-heading">
+                          Last Activity
+                        </header>
+                        <div class="panel-body">
+                            <table class="table table-hover p-table">
+                          <thead>
+                          <tr>
+                              <th>Title</th>
+                              <th>Start Time</th>
+                              <th>End Time</th>
+                              <th>Commnets</th>
+                              <th>Status</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>
+                                  Project analysis
+                              </td>
+                              <td>
+                                 18/11/2014 9:28:23
+                              </td>
+                              <td>
+                                  28/11/2014 12:23:03
+                              </td>
+                              <td>
+                                   Ipsum is that it has a as opposed to using Lorem Ipsum is that it has a as opposed to using
+                              </td>
+                              <td>
+                                  <span class="label label-info">Completed</span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Requirement Collection
+                              </td>
+                              <td>
+                                  10/11/2014 9:28:23
+                              </td>
+                              <td>
+                                  22/11/2014 12:23:03
+                              </td>
+                              <td>
+                                  Tawseef Ipsum is that it has a as opposed to using Lorem Ipsum is that it has a as opposed to using
+                              </td>
+                              <td>
+                                  <span class="label label-info">Reported</span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Design Implement
+                              </td>
+                              <td>
+                                  18/11/2014 9:28:23
+                              </td>
+                              <td>
+                                  28/11/2014 12:23:03
+                              </td>
+                              <td>
+                                  Dism Ipsum is that it has a as opposed to using Lorem Ipsum is that it has a as opposed to using
+                              </td>
+                              <td>
+                                  <span class="label label-info">Accepted</span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Widget Management
+                              </td>
+                              <td>
+                                  18/11/2014 9:28:23
+                              </td>
+                              <td>
+                                  28/11/2014 12:23:03
+                              </td>
+                              <td>
+                                  Cosm Ipsum is that it has a as opposed to using Lorem Ipsum is that it has a as opposed to using
+                              </td>
+                              <td>
+                                  <span class="label label-info">Completed</span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Contact Info
+                              </td>
+                              <td>
+                                  18/11/2014 9:28:23
+                              </td>
+                              <td>
+                                  28/11/2014 12:23:03
+                              </td>
+                              <td>
+                                  Hello that it has a as opposed to using Lorem Ipsum is that it has a as opposed to using
+                              </td>
+                              <td>
+                                  <span class="label label-info">Sent</span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Project analysis
+                              </td>
+                              <td>
+                                  18/11/2014 9:28:23
+                              </td>
+                              <td>
+                                  28/11/2014 12:23:03
+                              </td>
+                              <td>
+                                   Ipsum is that it has a as opposed to using Lorem Ipsum is that it has a as opposed to using
+                              </td>
+                              <td>
+                                  <span class="label label-info">Completed</span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Project analysis
+                              </td>
+                              <td>
+                                  18/11/2014 9:28:23
+                              </td>
+                              <td>
+                                  28/11/2014 12:23:03
+                              </td>
+                              <td>
+                                  Orem psum is that it has a as opposed to using Lorem Ipsum is that it has a as opposed to using
+                              </td>
+                              <td>
+                                  <span class="label label-info">Completed</span>
+                              </td>
+                          </tr>
+                          </tbody>
+                          </table>
+                        </div>
+                      </section>
+
+                  </div>
+                  <div class="col-md-4">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Projects Description
+                          </header>
+
+                          <div class="panel-body">
+                              <a href="#"><img src="img/email-img/vector-lab.jpg" alt=""/></a>
+
+                              <p>
+                                  Sometimes the simplest things are the hardest to find. I imagined a line of my favorite pieces, the things i would live in every day, all year round. So I stopped looking and started designing. Sometimes the simplest things are the hardest to find. Sometimes the simplest things are the hardest to find. I imagined a line of my favorite pieces, the things i would live in every day, all year round. So I stopped looking and started designing. Sometimes the simplest things are the hardest to find.
+                              </p>
+                              <br/>
+                              <h5 class="bold">Priority</h5>
+                              <ul class="nav nav-pills nav-stacked labels-info ">
+                                  <li><i class=" fa fa-circle text-danger"></i> High Priority</p></li>
+                              </ul>
+
+                              <br/>
+                              <h5 class="bold">Project files</h5>
+                              <ul class="list-unstyled p-files">
+                                  <li><a href="#"><i class="fa fa-file-text"></i> Project-document.docx</a></li>
+                                  <li><a href="#"><i class="fa fa-picture-o"></i> Logo-company.jpg</a></li>
+                                  <li><a href="#"><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a></li>
+                                  <li><a href="#"><i class="fa fa-file"></i> Contract-10_12_2014.docx</a></li>
+                              </ul>
+                              <br/>
+
+                              <h5 class="bold">Project Tags</h5>
+                              <ul class="p-tag-list">
+                                  <li><a href="#"><i class="fa fa-tag"></i> Dlor</a></li>
+                                  <li><a href="#"><i class="fa fa-tag"></i> Lorem ipsum</a></li>
+                                  <li><a href="#"><i class="fa fa-tag"></i> Google</a></li>
+                                  <li><a href="#"><i class="fa fa-tag"></i> Excellent</a></li>
+                                  <li><a href="#"><i class="fa fa-tag"></i> Dlor</a></li>
+                                  <li><a href="#"><i class="fa fa-tag"></i> Lorem ipsum</a></li>
+                                  <li><a href="#"><i class="fa fa-tag"></i> Google</a></li>
+                                  <li><a href="#"><i class="fa fa-tag"></i> Excellent</a></li>
+                              </ul>
+
+                              <div class="text-center mtop20">
+                                  <a href="#" class="btn btn-sm btn-primary">Add files</a>
+                                  <a href="#" class="btn btn-sm btn-warning">Report contact</a>
+                              </div>
+                          </div>
+
+                      </section>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
+      </section>
+      <!--main content end-->
+
+      <!-- Right Slidebar start -->
+      <div class="sb-slidebar sb-right sb-style-overlay">
+          <h5 class="side-title">Online Customers</h5>
+          <ul class="quick-chat-list">
+              <li class="online">
+                  <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                          <img alt="" src="img/chat-avatar2.jpg" class="media-object">
+                      </a>
+                      <div class="media-body">
+                          <strong>John Doe</strong>
+                          <small>Dream Land, AU</small>
+                      </div>
+                  </div><!-- media -->
+              </li>
+              <li class="online">
+                  <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                          <img alt="" src="img/chat-avatar.jpg" class="media-object">
+                      </a>
+                      <div class="media-body">
+                          <div class="media-status">
+                              <span class=" badge bg-important">3</span>
+                          </div>
+                          <strong>Jonathan Smith</strong>
+                          <small>United States</small>
+                      </div>
+                  </div><!-- media -->
+              </li>
+
+              <li class="online">
+                  <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                          <img alt="" src="img/pro-ac-1.png" class="media-object">
+                      </a>
+                      <div class="media-body">
+                          <div class="media-status">
+                              <span class=" badge bg-success">5</span>
+                          </div>
+                          <strong>Jane Doe</strong>
+                          <small>ABC, USA</small>
+                      </div>
+                  </div><!-- media -->
+              </li>
+              <li class="online">
+                  <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                          <img alt="" src="img/avatar1.jpg" class="media-object">
+                      </a>
+                      <div class="media-body">
+                          <strong>Anjelina Joli</strong>
+                          <small>Fockland, UK</small>
+                      </div>
+                  </div><!-- media -->
+              </li>
+              <li class="online">
+                  <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                          <img alt="" src="img/mail-avatar.jpg" class="media-object">
+                      </a>
+                      <div class="media-body">
+                          <div class="media-status">
+                              <span class=" badge bg-warning">7</span>
+                          </div>
+                          <strong>Mr Tasi</strong>
+                          <small>Dream Land, USA</small>
+                      </div>
+                  </div><!-- media -->
+              </li>
+          </ul>
+          <h5 class="side-title"> pending Task</h5>
+          <ul class="p-task tasks-bar">
+              <li>
+                  <a href="#">
+                      <div class="task-info">
+                          <div class="desc">Dashboard v1.3</div>
+                          <div class="percent">40%</div>
+                      </div>
+                      <div class="progress progress-striped">
+                          <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-success">
+                              <span class="sr-only">40% Complete (success)</span>
+                          </div>
+                      </div>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <div class="task-info">
+                          <div class="desc">Database Update</div>
+                          <div class="percent">60%</div>
+                      </div>
+                      <div class="progress progress-striped">
+                          <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-warning">
+                              <span class="sr-only">60% Complete (warning)</span>
+                          </div>
+                      </div>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <div class="task-info">
+                          <div class="desc">Iphone Development</div>
+                          <div class="percent">87%</div>
+                      </div>
+                      <div class="progress progress-striped">
+                          <div style="width: 87%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-info">
+                              <span class="sr-only">87% Complete</span>
+                          </div>
+                      </div>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <div class="task-info">
+                          <div class="desc">Mobile App</div>
+                          <div class="percent">33%</div>
+                      </div>
+                      <div class="progress progress-striped">
+                          <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-danger">
+                              <span class="sr-only">33% Complete (danger)</span>
+                          </div>
+                      </div>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <div class="task-info">
+                          <div class="desc">Dashboard v1.3</div>
+                          <div class="percent">45%</div>
+                      </div>
+                      <div class="progress progress-striped active">
+                          <div style="width: 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar">
+                              <span class="sr-only">45% Complete</span>
+                          </div>
+                      </div>
+
+                  </a>
+              </li>
+              <li class="external">
+                  <a href="#">See All Tasks</a>
+              </li>
+          </ul>
+      </div>
+      <!-- Right Slidebar end -->
+
+      <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              2013 &copy; FlatLab by VectorLab.
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/slidebars.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+
+
+  </body>
+
+<!-- Mirrored from thevectorlab.net/flatlab/product_details.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Aug 2015 03:47:44 GMT -->
+</html>
