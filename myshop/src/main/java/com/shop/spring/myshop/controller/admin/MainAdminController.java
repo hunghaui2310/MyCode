@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainAdminController {
@@ -72,5 +73,19 @@ public class MainAdminController {
                                 @RequestParam(name = "text") String text){
         productService.deleteProduct(productId);
         return "redirect:/admin/product?page=" + page + "&search-text=" + text;
+    }
+
+    @RequestMapping(value={"/editProduct/{id}"})
+    public ModelAndView getProduct(@PathVariable("id") Long productId){
+        ModelAndView view = new ModelAndView("admin/product_details");
+        Product product = productService.findById(productId);
+        view.addObject("products", product);
+        return view;
+    }
+
+    @RequestMapping(value = {"/save"}, method = RequestMethod.POST)
+    public String saveProduct(@ModelAttribute("product") Product product){
+        productService.save(product);
+        return "redirect:/admin/product";
     }
 }

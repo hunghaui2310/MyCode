@@ -17,7 +17,7 @@ public class Product {
     private String productName;
 
     @Column(name = "price", nullable = false)
-    private double price;
+    private int price;
 
     @Column(name = "des")
     private String description;
@@ -29,9 +29,16 @@ public class Product {
     @Column(name = "num_like")
     private Long numLike;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
+
     @Column(name = "create_date", nullable = false)
-    private Date createDate;
+    private String createDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
@@ -61,14 +68,6 @@ public class Product {
         this.productName = productName;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -85,14 +84,6 @@ public class Product {
         this.numLike = numLike;
     }
 
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
     public byte[] getImage() {
         return image;
     }
@@ -101,7 +92,18 @@ public class Product {
         this.image = image;
     }
 
-    public Product(String productName, double price, String description, byte[] image, Long numLike, Date createDate, Category category) {
+    public Product() {
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Product(String productName, int price, String description, byte[] image, Long numLike, String createDate, Category category) {
         this.productName = productName;
         this.price = price;
         this.description = description;
@@ -109,8 +111,5 @@ public class Product {
         this.numLike = numLike;
         this.createDate = createDate;
         this.category = category;
-    }
-
-    public Product() {
     }
 }

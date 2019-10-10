@@ -30,8 +30,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Optional<Product> getProId(Long productId) {
-        return productRepo.findById(productId);
+    public Product findById(Long productId) {
+        return productRepo.findById(productId).get();
     }
 
     @Override
@@ -48,5 +48,11 @@ public class ProductServiceImpl implements ProductService {
     public Product getProductByQuery(Long productId) {
         return productRepo.getByProductId(productId);
     }
+
+    @Override
+    public void save(Product product) {
+        productRepo.save(product);
+    }
+
 
 }

@@ -244,7 +244,7 @@
                                           <a href="#" class="pro-title" th:utext="${product.productName}"></a>
                                       </h4>
                                       <p class="price" th:utext="${product.price}"></p>
-                                      <button>Edit</button>
+                                      <a class="btn btn-primary" th:href="@{'/editProduct/' + ${product.productId}}">Sửa</a>
                                       <a class="btn btn-danger text-white dBtn"
                                          th:href="@{/find-product(id=${product.productId})}"><i
                                               class="fas fa-trash"></i>Xóa</a>

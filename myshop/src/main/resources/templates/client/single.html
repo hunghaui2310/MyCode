@@ -49,8 +49,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //banner -->
 <!-- single -->
-<div class="single">
-    <div class="container" th:each="product:${products}">
+<div class="single" th:action="@{/save}", th:object="">
+    <div class="container">
         <div class="col-md-6 single-right-left animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
             <div class="grid images_3_of_2">
                 <div class="flexslider">
@@ -84,7 +84,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="col-md-6 single-right-left simpleCart_shelfItem animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
-            <h3 th:attr="value=${product.productId}" th:utext="${product.productName}"></h3>
+            <th:block th:action="@{/showProduct}", th:method="post">
+            <h3 for="productName" th:utext="${products.productName}"></h3>
             <p><span class="item_price" th:utext="${product.price}"></span> <del>- $900</del></p>
             <div class="rating1">
 						<span class="starRating">
@@ -132,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="occasion-cart">
                 <a href="#" class="item_add hvr-outline-out button2">Add to cart</a>
             </div>
-
+            </th:block>
         </div>
         <div class="clearfix"> </div>
 
