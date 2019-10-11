@@ -73,19 +73,14 @@ public class MainController {
         return "client/index";
     }
 
-    @GetMapping("/register")
-    public String register(Model model) {
-        return "client/register";
+    @GetMapping("/login")
+    public String login(Model model){
+        return "client/login";
     }
 
     @GetMapping("/forgot-password")
     public String forgotPassword(Model model) {
         return "client/forgot-password";
-    }
-
-    @GetMapping("/login")
-    public String login(Model model){
-        return "client/login";
     }
 
     @GetMapping("/order")

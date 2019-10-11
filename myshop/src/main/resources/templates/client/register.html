@@ -62,49 +62,77 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <img src="client/register/images/b11.png" class="img-fluid" alt="">
             </div>
             <div class="txt-left-side">
-                <h2> Sign Up Here </h2>
-                <form action="#" method="post">
-                    <div class="form-left-to-w3l">
-                        <span class="fa fa-user-o" aria-hidden="true"></span>
-                        <input type="text" name="Name" placeholder=" Tên đăng nhập..." required="">
-
-                        <div class="clear"></div>
+                <div th:if="${param.success}">
+                    <div class="alert alert-info">
+                        You've successfully registered to our app!
                     </div>
-                    <div class="form-left-to-w3l">
-                        <span class="fa fa-phone" aria-hidden="true"></span>
-                        <input type="text" name="Phone" placeholder="Số điện thoại..." required="">
-
-                        <div class="clear"></div>
-                    </div>
-                    <div class="form-left-to-w3l ">
-
-                        <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="password" placeholder="Mật khẩu..." required="">
-                        <div class="clear"></div>
-                    </div>
-                    <div class="form-left-to-w3l ">
-
-                        <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="password" placeholder="Xác nhận mật khẩu..." required="">
-                        <div class="clear"></div>
-                    </div>
-                    <div class="main-two-w3ls">
-                        <div class="left-side-forget">
-                            <input type="checkbox">
-                            <span>Tôi đồng ý với <a href="/service">điều khoản & dịch vụ</a></span>
-                        </div>
-                    </div>
-                    <div class="btnn">
-                        <button type="submit">Đăng kí </button>
-                    </div>
-                </form>
-                <div class="w3layouts_more-buttn">
-                    <h3>Bạn đã có tài khoản
-                        <a href="#">Đăng nhập
-                        </a>
-                    </h3>
                 </div>
-                <div class="clear"></div>
+                <h2> Đăng kí ngay </h2>
+                <form th:action="@{/register}" th:object="${user}" method="post">
+                <p class="error-message"
+                   th:if="${#fields.hasGlobalErrors()}"
+                   th:each="error : ${#fields.errors('global')}"
+                   th:text="${error}">Validation error</p>
+
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('userName')}? 'has-error':''">
+                    <label for="userName" class="label-primary">Tên tài khoản</label>
+                    <input id="userName"
+                           class="form-control"
+                           th:field="*{userName}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('userName')}"
+                       th:text="${error}">Validation error</p>
+                </div>
+
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
+                    <label for="password" class="label-primary">Mật khẩu</label>
+                    <input id="password"
+                           class="form-control"
+                           type="password"
+                           th:field="*{password}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('password')}"
+                       th:text="${error}">Validation error</p>
+                </div>
+
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
+                    <label for="confirmPassword" class="label-primary">Nhập lại mật khẩu</label>
+                    <input id="confirmPassword"
+                           class="form-control"
+                           type="password"
+                           th:field="*{confirmPassword}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('confirmPassword')}"
+                       th:text="${error}">Validation error</p>
+                </div>
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('terms')}? 'has-error':''">
+                    <input id="terms"
+                           type="checkbox"
+                           th:field="*{terms}"/>  
+                    <label class="label-primary" for="terms">
+                        I agree with the <a href="#">terms and conditions</a> for Registration.
+                    </label>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('terms')}"
+                       th:text="${error}">Validation error</p>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Register</button>
+                    <span>Already registered? <a href="/" th:href="@{/login}">Login here</a></span>
+                </div>
+                </form>
+<!--                <div class="w3layouts_more-buttn">-->
+<!--                    <h3>Bạn đã có tài khoản-->
+<!--                        <a href="#">Đăng nhập-->
+<!--                        </a>-->
+<!--                    </h3>-->
+<!--                </div>-->
+<!--                <div class="clear"></div>-->
             </div>
         </div>
     </div>

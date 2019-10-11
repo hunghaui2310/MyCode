@@ -44,4 +44,10 @@ public class UserRole {
     public void setAppRole(AppRole appRole) {
         this.appRole = appRole;
     }
+
+    public UserRole(AppUser appUser, AppRole appRole) {
+        super();
+        this.appUser = appUser;
+        this.appRole = appRole;
+    }
 }
