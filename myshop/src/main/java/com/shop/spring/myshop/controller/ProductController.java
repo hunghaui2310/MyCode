@@ -16,11 +16,12 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(value={"/showProduct","/showProduct/{id}"}, method = RequestMethod.GET)
-    public String showProduct(@PathVariable("id") Long productId, Model model){
-//        Optional<Product> product = productService.getProId(productId);
-//        model.addAttribute("products",product);
-        return "client/single";
+    @RequestMapping(value={"/showProduct/{id}"})
+    public ModelAndView getProduct(@PathVariable("id") Long productId){
+        ModelAndView view = new ModelAndView("client/single");
+        Product product = productService.findById(productId);
+        view.addObject("products", product);
+        return view;
     }
 
 }
