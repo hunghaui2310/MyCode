@@ -63,15 +63,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="txt-left-side">
             <h2> Đăng nhập </h2>
-            <form th:action="@{/login}" method="post">
-                <div class="form-left-to-w3l">
+            <form th:action="@{/login}" method="post" class="login100-form validate-form">
+                <div class="form-left-to-w3l" data-validate="Enter username">
                     <span class="fa fa-user-o" aria-hidden="true"></span>
-                    <input type="text" name="Name" placeholder=" Tên đăng nhập..." required="" data-placeholder="&#xf207;">
+                    <input type="text" name="username" placeholder=" Tên đăng nhập..." required="" data-placeholder="&#xf207;">
                     <div class="clear"></div>
                 </div>
-                <div class="form-left-to-w3l ">
+                <div class="form-left-to-w3l" data-validate="Enter password">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <input type="password" name="password" placeholder="Mật khẩu..." required="" data-placeholder="&#xf207;">
+                    <input type="password" name="pass" placeholder="Mật khẩu..." required="" data-placeholder="&#xf207;">
                     <div class="clear"></div>
                 </div>
                 <div class="main-two-w3ls">

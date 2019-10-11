@@ -48,14 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 					.permitAll();
 		
 		http.authorizeRequests().antMatchers("/check-in").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/check-out").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/chamber").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/guest").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/order").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/service").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/employee").access("hasAnyRole('ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/update-chamber/**").access("hasAnyRole('ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/update-employee-info").access("hasAnyRole('ROLE_ADMIN')");
+		http.authorizeRequests().antMatchers("/admin/product").access("hasAnyRole('ROLE_ADMIN')");
+		http.authorizeRequests().antMatchers("/product-detail").access("hasAnyRole('ROLE_ADMIN')");
 		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 	}
 	

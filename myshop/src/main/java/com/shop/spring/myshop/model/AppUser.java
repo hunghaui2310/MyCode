@@ -5,11 +5,11 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "app_user", //
-        uniqueConstraints = { @UniqueConstraint(name = "USER_UK", columnNames = "email") })
+        uniqueConstraints = { @UniqueConstraint(name = "USER_UK", columnNames = "user_name") })
 public class AppUser implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
 
     @Column(name = "user_id", nullable = false)
     private Long userId;
@@ -22,10 +22,6 @@ public class AppUser implements Serializable {
 
     @Column(name = "email")
     private String email;
-
-    @Lob
-    @Column(name = "avatar",length = Integer.MAX_VALUE)
-    private byte[] avatar;
 
     @Column(name = "address", nullable = false)
     private String address;
@@ -58,14 +54,6 @@ public class AppUser implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public byte[] getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(byte[] avatar) {
-        this.avatar = avatar;
     }
 
     public String getAddress() {

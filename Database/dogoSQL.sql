@@ -5,7 +5,6 @@ create table app_user(
     phone_number bigint(20),
     user_name varchar(50) not null,
     email varchar(50),
-    avatar longblob,
     address varchar(255),
     encryted_password varchar(125) not null,
     enabled bit not null,
@@ -13,9 +12,9 @@ create table app_user(
     constraint user_uk unique (user_name)
 );
 
-insert into dogohuyhung.app_User (phone_number,user_name, email,avatar,address, ENCRYTED_PASSWORD, ENABLED) 
-values ('0364516673','hung nguyen','hunghomhinh2310@gmail.com',LOAD_FILE('C:/Users/Admin/Downloads/1.jpg'),'kieu mai, ha noi', '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 1),
-	('0367786012','hung2','hunghaui2310@gmail.com',LOAD_FILE('C:/Users/Admin/Downloads/2.jpg'),'cau giay, ha noi', '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 1);
+insert into dogohuyhung.app_User (phone_number,user_name, email,address, ENCRYTED_PASSWORD, ENABLED) 
+values ('0364516673','hung nguyen','hunghomhinh2310@gmail.com','kieu mai, ha noi', '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 1),
+	('0367786012','hung2','hunghaui2310@gmail.com','cau giay, ha noi', '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.TCrFu', 1);
 
 create table app_role(
 	role_id bigint auto_increment,
