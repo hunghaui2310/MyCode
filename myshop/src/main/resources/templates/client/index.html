@@ -74,20 +74,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><img class="img-responsive" src="client/images/ba3.png" alt="Dummy Image" /></li>
 			</ul>
 
-			<!-- Slide Description Image Area (316 x 328) -->
-<!--			<div class="script-wrap">-->
-<!--				<ul class="script-group">-->
-<!--					<li><div class="inner-script"><img class="img-responsive" src="client/images/baa1.jpg" alt="Dummy Image" /></div></li>-->
-<!--					<li><div class="inner-script"><img class="img-responsive" src="client/images/baa2.jpg" alt="Dummy Image" /></div></li>-->
-<!--					<li><div class="inner-script"><img class="img-responsive" src="client/images/baa3.jpg" alt="Dummy Image" /></div></li>-->
-<!--				</ul>-->
-<!--				<div class="slide-controller">-->
-<!--					<a href="#" class="btn-prev"><img src="client/images/btn_prev.png" alt="Prev Slide" /></a>-->
-<!--					<a href="#" class="btn-play"><img src="client/images/btn_play.png" alt="Start Slide" /></a>-->
-<!--					<a href="#" class="btn-pause"><img src="client/images/btn_pause.png" alt="Pause Slide" /></a>-->
-<!--					<a href="#" class="btn-next"><img src="client/images/btn_next.png" alt="Next Slide" /></a>-->
-<!--				</div>-->
-<!--			</div>-->
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
@@ -139,8 +125,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 product-men yes-marg" th:block th:each="product,item:${listProduct}">
 							<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img src="client/images/mw2.png" alt="" class="pro-image-front" th:utext="${product.image}">
-									<img src="client/images/mw2.png" alt="" class="pro-image-back" th:utext="${product.image}">
+									<img src="client/images/mw2.png" alt="" class="pro-image-front">
+									<img src="client/images/mw2.png" alt="" class="pro-image-back">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
 											<a th:href="@{'/showProduct/' + ${product.productId}}" class="link-product-add-cart">Xem chi tiết</a>

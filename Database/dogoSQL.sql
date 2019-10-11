@@ -75,10 +75,28 @@ create table product(
     num_like int(20),
     PRIMARY KEY  (product_id)
 );
+
+alter table product drop image;
+alter table product drop file_id;
+desc product;
 alter table order_detail
         add constraint ORDER_DETAIL_PROD_FK
         foreign key (PRODUCT_ID)
         references Product (product_id);
+
+create table file_info(
+	file_id bigint(100) NOT NULL auto_increment,
+    file_name nvarchar(256),
+    url nvarchar(256),
+    product_id bigint(100),
+    primary key (file_id)
+--    constraint file_fk foreign key (file_id) references product(file_id)
+);
+alter table file_info add column product_id bigint(100);
+alter table file_info
+	add constraint FILE_INFO_FK
+    foreign key (product_id)
+    references product(product_id);
 
 insert into dogohuyhung.product (product_name, price,des,image, CREATE_DATE, num_like,category_id)
 values ('Quan 1', 100,'san pham chat luong1',LOAD_FILE('C:/Users/Admin/Downloads/3.jpg'), '2019-09-12',111,1),

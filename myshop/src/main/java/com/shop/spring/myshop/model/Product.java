@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "product",uniqueConstraints = { @UniqueConstraint(name = "USER_ROLE_PK", columnNames = "category_id") })
+@Table(name = "product",uniqueConstraints = { @UniqueConstraint(name = "PRODUCT_PK", columnNames = "category_id") })
 public class Product {
 
     @Id
@@ -21,10 +21,6 @@ public class Product {
 
     @Column(name = "des")
     private String description;
-
-    @Lob
-    @Column(name = "image",length = Integer.MAX_VALUE)
-    private byte[] image;
 
     @Column(name = "num_like")
     private Long numLike;
@@ -84,14 +80,6 @@ public class Product {
         this.numLike = numLike;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
     public Product() {
     }
 
@@ -103,11 +91,10 @@ public class Product {
         this.price = price;
     }
 
-    public Product(String productName, int price, String description, byte[] image, Long numLike, String createDate, Category category) {
+    public Product(String productName, int price, String description, Long numLike, String createDate, Category category) {
         this.productName = productName;
         this.price = price;
         this.description = description;
-        this.image = image;
         this.numLike = numLike;
         this.createDate = createDate;
         this.category = category;
