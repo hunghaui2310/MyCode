@@ -34,6 +34,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //for-mobile-apps -->
     <link href="client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
     <!-- js -->
     <script type="text/javascript" src="client/js/jquery-2.1.4.min.js"></script>
     <!-- //js -->
@@ -46,12 +48,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
     <script src="client/js/jquery.easing.min.js"></script>
+
 </head>
 <body>
 <div th:replace="~{client/header::header_content}"></div>
 <div th:replace="~{client/header::#header-bot}"></div>
 <div th:replace="~{client/header::#ban-top}"></div>
-    <h1 class="error">Gadget Sign Up Form</h1>
+
+    <h1 class="error">TRANG ĐĂNG KÍ</h1>
 	<!---728x90--->
     <div class="w3layouts-two-grids">
 	<!---728x90--->
@@ -64,11 +68,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="txt-left-side">
                 <div th:if="${param.success}">
                     <div class="alert alert-info">
-                        You've successfully registered to our app!
+                        Đăng kí thành công
                     </div>
                 </div>
                 <h2> Đăng kí ngay </h2>
-                <form th:action="@{/register}" th:object="${user}" method="post">
+                <form th:action="@{/register}" th:object="${user}" method="post" id="formDemo">
                 <p class="error-message"
                    th:if="${#fields.hasGlobalErrors()}"
                    th:each="error : ${#fields.errors('global')}"
@@ -76,10 +80,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <div class="form-group"
                      th:classappend="${#fields.hasErrors('userName')}? 'has-error':''">
-                    <label for="userName" class="label-primary">Tên tài khoản</label>
-                    <input id="userName"
+                    <label for="userName" class="control-label">Tên tài khoản</label>
+                    <input id="userName" name="userName"
                            class="form-control"
-                           th:field="*{userName}"/>
+                           th:field="*{userName}" required/>
                     <p class="error-message"
                        th:each="error : ${#fields.errors('userName')}"
                        th:text="${error}">Validation error</p>
@@ -87,11 +91,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <div class="form-group"
                      th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
-                    <label for="password" class="label-primary">Mật khẩu</label>
-                    <input id="password"
+                    <label for="password" class="control-label">Mật khẩu</label>
+                    <input id="password" name="password"
                            class="form-control"
                            type="password"
-                           th:field="*{password}"/>
+                           th:field="*{password}" required/>
                     <p class="error-message"
                        th:each="error : ${#fields.errors('password')}"
                        th:text="${error}">Validation error</p>
@@ -99,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <div class="form-group"
                      th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
-                    <label for="confirmPassword" class="label-primary">Nhập lại mật khẩu</label>
+                    <label for="confirmPassword" class="control-label">Nhập lại mật khẩu</label>
                     <input id="confirmPassword"
                            class="form-control"
                            type="password"
@@ -113,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <input id="terms"
                            type="checkbox"
                            th:field="*{terms}"/>  
-                    <label class="label-primary" for="terms">
+                    <label class="control-label" for="terms">
                         I agree with the <a href="#">terms and conditions</a> for Registration.
                     </label>
                     <p class="error-message"
@@ -122,23 +126,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Register</button>
-                    <span>Already registered? <a href="/" th:href="@{/login}">Login here</a></span>
+                    <button type="submit" class="btn btn-success">Đăng kí</button>
+                    <span>Bạn đã có tài khoản? <a href="/" th:href="@{/login}">Đăng nhập</a></span>
                 </div>
                 </form>
-<!--                <div class="w3layouts_more-buttn">-->
-<!--                    <h3>Bạn đã có tài khoản-->
-<!--                        <a href="#">Đăng nhập-->
-<!--                        </a>-->
-<!--                    </h3>-->
-<!--                </div>-->
-<!--                <div class="clear"></div>-->
             </div>
         </div>
     </div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        //Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+        $("#formDemo").validate({
+            rules: {
+                userName: "required",
+                password: "required",
+            },
+            messages: {
+                userName: "Vui lòng nhập tên tài khoản",
+                password: "Vui lòng nhập mật khẩu",
+            }
+        });
+    });
+</script>
+
 	<!---728x90--->
 <div th:replace="~{client/header::#top-footer}"></div>
 <div th:replace="~{client/header::#footer}"></div>
+
+<script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 </body>
 
 </html>

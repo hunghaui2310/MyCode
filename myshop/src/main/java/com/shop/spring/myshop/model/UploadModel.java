@@ -1,10 +1,12 @@
 package com.shop.spring.myshop.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "file_info",uniqueConstraints = { @UniqueConstraint(name = "FILE_INFO_FK", columnNames = "product_id") })
-public class FileInfo {
+public class UploadModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,24 +23,25 @@ public class FileInfo {
     }
 
     @Column(name = "file_name")
-    private String filename;
-    public String getFilename() {
-        return this.filename;
+    private String extraField;
+
+    public String getExtraField() {
+        return extraField;
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
+    public void setExtraField(String extraField) {
+        this.extraField = extraField;
     }
 
     @Column(name = "url")
-    private String url;
+    private MultipartFile[] files;
 
-    public String getUrl() {
-        return this.url;
+    public MultipartFile[] getFiles() {
+        return files;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setFiles(MultipartFile[] files) {
+        this.files = files;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -51,11 +54,6 @@ public class FileInfo {
 
     public void setProduct(Product product) {
         this.product = product;
-    }
-
-    public FileInfo(String filename, String url) {
-        this.filename = filename;
-        this.url = url;
     }
 
 }

@@ -187,78 +187,19 @@
 <!--                                                        <input type="file" id="exampleInputFile">-->
 <!--                                                        <p class="help-block">Example block-level help text here.</p>-->
                                                         <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
-                                                            <div class="form-group">
-                                                                <label class="control-label" for="files">Upload Multiple Files:</label>
-                                                                <input type="file" class="form-control" id="files"
-                                                                       placeholder="Upload Multiple Files"  name="files" multiple></input>
-                                                            </div>
-                                                            <button type="submit" class="btn btn-default" id="btnSubmit">Upload</button>
+                                                            <input type="text" name="extraField"/><br/><br/>
+                                                            <input type="file" name="files"/><br/><br/>
+                                                            <input type="file" name="files"/><br/><br/>
                                                         </form>
+                                                        <h2>Kết quả</h2>
+                                                        <pre><span id="result"></span></pre>
                                                     </div>
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input type="checkbox"> Check me out
-                                                        </label>
-                                                    </div>
-                                                    <button type="submit" class="btn btn-info">Lưu</button>
+                                                    <input type="submit" class="btn btn-info" value="Lưu" id="btnSubmit"></input>
                                                 </form>
 
                                             </div>
                                         </section>
                                     </div>
-<!--                                <h4 class="pro-d-title">-->
-<!--                                    <a href="#" class="">-->
-<!--                                        Leopard Shirt Dress-->
-<!--                                    </a>-->
-<!--                                </h4>-->
-<!--                                <p>-->
-<!--                                    Praesent ac condimentum felis. Nulla at nisl orci, at dignissim dolor, The best product descriptions address your ideal buyer directly and personally. The best product descriptions address your ideal buyer directly and personally.-->
-<!--                                </p>-->
-<!--                                <div class="product_meta">-->
-<!--                                    <span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">Jackets</a>, <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>, <a rel="tag" href="#">T-shirt</a>.</span>-->
-<!--                                    <span class="tagged_as"><strong>Tags:</strong> <a rel="tag" href="#">mens</a>, <a rel="tag" href="#">womens</a>.</span>-->
-<!--                                </div>-->
-<!--                                <div class="m-bot15"> <strong>Price : </strong> <span class="amount-old">$544</span>  <span class="pro-price"> $300.00</span></div>-->
-<!--                                <div class="form-group">-->
-<!--                                    <label>Quantity</label>-->
-<!--                                    <input type="quantiy" placeholder="1" class="form-control quantity">-->
-<!--                                </div>-->
-<!--                                <p>-->
-<!--                                    <button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>-->
-<!--                                </p>-->
-<!--                                <form action="#" th:action="@{/save}" th:object="${products}" method="post" class="form-group">-->
-<!--                                    <table border="0" cellpadding="10" class="table-advance">-->
-<!--                                        <tr>-->
-<!--                                            <label>ID Sản phẩm:</label>-->
-<!--                                            <input type="number" th:field="*{productId}" readonly="readonly"/>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <label>Tên sản phẩm:</label>-->
-
-<!--                                                <input type="text" th:field="*{productName}" />-->
-
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <label>Giá:</label>-->
-<!--                                            <input type="number" th:field="*{price}" />VNĐ-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <label>Mô tả:</label>-->
-<!--                                            <textarea type="text" rows="4" cols="40" th:field="*{description}" />-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <label>Ngày ra mắt:</label>-->
-<!--                                            <input type="date" th:field="*{createDate}" />-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <label>Số lượt thích:</label>-->
-<!--                                            <input type="number" th:field="*{numLike}" />-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <td colspan="2"><button type="submit">Save</button> </td>-->
-<!--                                        </tr>-->
-<!--                                    </table>-->
-<!--                                </form>-->
                             </div>
                         </div>
                     </section>
@@ -541,7 +482,10 @@
         </div>
     </footer>
     <!--footer end-->
+    <script type="text/javascript"
+            src="webjars/jquery/2.2.4/jquery.min.js"></script>
 
+    <script type="text/javascript" src="admin/js/main.js"></script>
 
 
 </section>
