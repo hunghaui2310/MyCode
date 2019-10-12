@@ -3,7 +3,10 @@ package com.shop.spring.myshop.service.impl;
 import com.shop.spring.myshop.model.AppUser;
 import com.shop.spring.myshop.repo.RoleRepository;
 import com.shop.spring.myshop.repo.UserRepository;
+import com.shop.spring.myshop.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -45,4 +48,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserDetails userDetails = (UserDetails) new User(appUser.getUserName(), appUser.getEncrytedPassword(), grantList);
         return userDetails;
     }
+
 }

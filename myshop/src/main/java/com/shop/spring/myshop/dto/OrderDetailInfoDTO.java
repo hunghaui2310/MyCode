@@ -3,7 +3,6 @@ package com.shop.spring.myshop.dto;
 public class OrderDetailInfoDTO {
 
     private Long id;
-    private String productCode;
     private String productName;
     private int quantity;
     private double price;
@@ -24,14 +23,6 @@ public class OrderDetailInfoDTO {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getProductCode() {
-        return productCode;
-    }
-
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
     }
 
     public String getProductName() {
