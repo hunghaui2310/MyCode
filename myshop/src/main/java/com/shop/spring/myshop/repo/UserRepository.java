@@ -20,4 +20,12 @@ public interface UserRepository extends JpaRepository<AppUser, Long>{
     @Query(CustomQuery.SEARCH_USER)
     Page<AppUser> searchAppUser (Pageable pageable, @Param("text") String text);
 
+    @Query(CustomQuery.UPDATE_USER)
+    AppUser updateUser(@Param("userName") String userName,
+                       @Param("phoneNumber") Long phoneNumber,
+                       @Param("email") String email,
+                       @Param("address") String address,
+                       @Param("encrytedPassword") String encrytedPassword,
+                       @Param("userId") Long userId);
+
 }

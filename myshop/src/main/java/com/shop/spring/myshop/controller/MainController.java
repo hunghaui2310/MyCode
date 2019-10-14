@@ -1,8 +1,10 @@
 package com.shop.spring.myshop.controller;
 
+import com.shop.spring.myshop.model.AppUser;
 import com.shop.spring.myshop.model.Product;
 import com.shop.spring.myshop.service.CategoryService;
 import com.shop.spring.myshop.service.ProductService;
+import com.shop.spring.myshop.service.impl.AppUserServiceImpl;
 import com.shop.spring.myshop.utils.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,10 +14,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -27,6 +26,9 @@ public class MainController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private AppUserServiceImpl appUserService;
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String homePage(Model model,
@@ -65,6 +67,7 @@ public class MainController {
         model.addAttribute("totalElement", totalElement);
         model.addAttribute("baseUrl", baseUrl);
         model.addAttribute("listProduct", pages);
+        model.addAttribute("users", appUserService.findAll());
         model.addAttribute("extra", extra);
         model.addAttribute("checkLast", checkLast);
         model.addAttribute("searchUrl", searchUrl);
@@ -76,6 +79,21 @@ public class MainController {
     @GetMapping("/login")
     public String login(Model model){
         return "client/login";
+    }
+
+    @GetMapping("/find-user")
+    @ResponseBody
+    public AppUser findUser(Long userId){
+        return appUserService.getOneUser(userId);
+    }
+
+    @PostMapping("/update-user")
+    public String updateUser(@RequestParam("userName") String userName, @RequestParam("phoneNumber") Long phoneNumber,
+                             @RequestParam("email") String email, @RequestParam("address") String address,
+                             @RequestParam("encrytedPassword") String encrytedPassword, @RequestParam("userId") Long userId,
+                             @RequestParam("text") String text, @RequestParam("page") int page){
+        appUserService.updateUser(userName,phoneNumber,email,address,encrytedPassword,userId);
+        return "redirect:/?page=" + page + "&search-text=" + text;
     }
 
     @GetMapping("/forgot-password")
@@ -107,6 +125,6 @@ public class MainController {
             String message = "Xin chào " + principal.getName() + ". Bạn không có quyền truy cập vào trang web này";
             model.addAttribute("message", message);
         }
-        return "403Page";
+        return "client/403Page";
     }
 }

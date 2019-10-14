@@ -1,6 +1,7 @@
 package com.shop.spring.myshop.service.impl;
 
 import com.shop.spring.myshop.model.Category;
+import com.shop.spring.myshop.model.Product;
 import com.shop.spring.myshop.repo.CategoryRepo;
 import com.shop.spring.myshop.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +18,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> getList() {
         return categoryRepo.findAll();
+    }
+
+    @Override
+    public List<Product> getProductbycate(Long categoryId) {
+        return categoryRepo.getProbyCate(categoryId);
     }
 }

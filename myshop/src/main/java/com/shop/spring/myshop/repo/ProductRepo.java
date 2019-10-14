@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
 
@@ -17,4 +19,6 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
     @Query(CustomQuery.GET_PRODUCT)
     Product getByProductId(@Param("productId") Long productId);
 
+    @Query(CustomQuery.GET_PRODUCT_BY_ID1)
+    List<Product> getProductId1();
 }
