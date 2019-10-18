@@ -23,7 +23,7 @@ public class AppUserServiceImpl implements AppUserService {
 
     @Override
     public AppUser getAppUser(Long userId) {
-        return userRepository.findById(userId).get();
+        return userRepository.getOne(userId);
     }
 
     @Override

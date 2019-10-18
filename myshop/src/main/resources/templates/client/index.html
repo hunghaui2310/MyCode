@@ -61,12 +61,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="col-md-3">
 			<ul class="container" style="width: 50%" >
-				<li><span class="glyphicon glyphicon-user"></span><a href="/register"> Đăng kí</a></li>
+				<li th:if="${#request.userPrincipal == null}"><span class="glyphicon glyphicon-user"></span><a th:href="@{/register}"> Đăng kí</a></li>
 				<br/>
-				<li><span class="glyphicon glyphicon-log-in" aria-hiden="true"></span><a href="/login"> Đăng nhập</a></li>
-				<li><span class="glyphicon glyphicon-log-in" aria-hiden="true"></span><a class="btn btn-danger text-white eBtn" th:each="user : ${users}"
-					 th:if="${#request.userPrincipal != null}" th:href="@{/find-user(id=${user.userId})}"><i
-						class="fas fa-trash"></i>Tài khoản của tôi</a></li>
+				<li th:if="${#request.userPrincipal == null}"><span class="glyphicon glyphicon-log-in" aria-hiden="true" ></span><a th:href="@{/login}"> Đăng nhập</a></li>
+				<li th:if="${#request.userPrincipal != null}"><span class="glyphicon glyphicon-user" aria-hiden="true"></span> <a th:href="@{/myAccount}" th:text="${currentRole}" style="width: 200px"></a></li>
+				<br/>
+				<li th:if="${#request.userPrincipal != null}"><span class="glyphicon glyphicon-log-out" aria-hiden="true"> </span><a th:href="@{/logout}"> Đăng xuất</a></li>
 			</ul>
 		</div>
 		<div class="clearfix"></div>

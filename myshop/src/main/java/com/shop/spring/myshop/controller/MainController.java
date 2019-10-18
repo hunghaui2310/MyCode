@@ -115,23 +115,14 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String login(Model model){
+    public String login(Model model, String error, String message){
+        if(error != null){
+            model.addAttribute("error", "Your user name and password isinvalid!");
+        }
+        if(message != null){
+            model.addAttribute("message", "You have been logged out successfully!");
+        }
         return "client/login";
-    }
-
-    @GetMapping("/find-user")
-    @ResponseBody
-    public AppUser findUser(Long userId){
-        return appUserService.getOneUser(userId);
-    }
-
-    @PostMapping("/update-user")
-    public String updateUser(@RequestParam("userName") String userName, @RequestParam("phoneNumber") Long phoneNumber,
-                             @RequestParam("email") String email, @RequestParam("address") String address,
-                             @RequestParam("encrytedPassword") String encrytedPassword, @RequestParam("userId") Long userId,
-                             @RequestParam("text") String text, @RequestParam("page") int page){
-        appUserService.updateUser(userName,phoneNumber,email,address,encrytedPassword,userId);
-        return "redirect:/?page=" + page + "&search-text=" + text;
     }
 
     @GetMapping("/forgot-password")

@@ -14,4 +14,5 @@ public class UserRoleAdvice {
         String name = auth.getName(); // get logged in username
         return name;
     }
+    
 }

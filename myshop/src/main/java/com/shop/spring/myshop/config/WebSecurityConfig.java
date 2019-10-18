@@ -43,6 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests().antMatchers("/", "/logout").permitAll()
 		.and()
+
 			.formLogin().usernameParameter("username").passwordParameter("pass")
 				.loginPage("/login")
 					.permitAll();
@@ -56,6 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().and() //
 				.rememberMe().tokenRepository(this.persistentTokenRepository()) //
 				.tokenValiditySeconds(1 * 24 * 60 * 60);
+
 	}
 	
 	
