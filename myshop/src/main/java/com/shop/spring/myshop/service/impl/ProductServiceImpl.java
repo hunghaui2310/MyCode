@@ -54,5 +54,10 @@ public class ProductServiceImpl implements ProductService {
         productRepo.save(product);
     }
 
+    @Override
+    public Page<Product> findAll(Pageable pageable) {
+        return productRepo.findAll(pageable);
+    }
+
 
 }

@@ -31,11 +31,9 @@ public class MainController {
     private AppUserServiceImpl appUserService;
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
-    public String homePage(Model model,
-                           @RequestParam(name = "page", defaultValue = "0") Integer page,
-                           @RequestParam(name = "search-text", defaultValue = "") String text) {
+    public String homePage(Model model, @RequestParam(name = "page", defaultValue = "0") Integer page) {
         Pageable pageable = PageRequest.of(page, 12);
-        Page<Product> pages = productService.searchProduct(pageable, text);
+        Page<Product> pages = productService.findAll(pageable);
         int current = pages.getNumber() + 1;
         long total = pages.getTotalPages();
         long totalElement = pages.getTotalElements();
@@ -59,7 +57,6 @@ public class MainController {
             checkLast = true;
         }
         String baseUrl = "/?page=";
-        String searchUrl = "&search-text="+text;
         model.addAttribute("beginIndex", begin);
         model.addAttribute("endIndex", end);
         model.addAttribute("currentIndex", current);
@@ -70,10 +67,51 @@ public class MainController {
         model.addAttribute("users", appUserService.findAll());
         model.addAttribute("extra", extra);
         model.addAttribute("checkLast", checkLast);
-        model.addAttribute("searchUrl", searchUrl);
-        model.addAttribute("searchText", text);
-        model.addAttribute("listCategory",categoryService.getList());
         return "client/index";
+    }
+
+    @RequestMapping(value = {"/search"}, method = RequestMethod.GET)
+    public String search(Model model, @RequestParam(name = "page", defaultValue = "0") Integer page,
+                         @RequestParam(name = "search-text", defaultValue = "") String text) {
+        Pageable pageable = PageRequest.of(page, 16);
+        Page<Product> pages = productService.searchProduct(pageable,text);
+        int current = pages.getNumber() + 1;
+        long total = pages.getTotalPages();
+        long totalElement = pages.getTotalElements();
+        long begin = 1;
+        long end = 1;
+        if (current > 5 && total > 6) {
+            begin = Math.max(1, current);
+        }
+        if (total != 0) {
+            end = Math.min(begin + 4, total);
+        }
+        if (current == total - 5) {
+            end = total;
+        }
+        boolean extra = false;
+        boolean checkLast = false;
+        if (total > 5 && current < total - 5) {
+            extra = true;
+        }
+        if (total > 6 && current < total - 5) {
+            checkLast = true;
+        }
+        String baseUrl = "/search/?page=";
+        String searchUrl = "&search-text=" + text;
+        model.addAttribute("beginIndex", begin);
+        model.addAttribute("endIndex", end);
+        model.addAttribute("currentIndex", current);
+        model.addAttribute("totalPageCount", total);
+        model.addAttribute("totalElement", totalElement);
+        model.addAttribute("baseUrl", baseUrl);
+        model.addAttribute("listProduct", pages);
+        model.addAttribute("users", appUserService.findAll());
+        model.addAttribute("extra", extra);
+        model.addAttribute("searchUrl", searchUrl);
+        model.addAttribute("checkLast", checkLast);
+        model.addAttribute("searchText", text);
+        return "client/search";
     }
 
     @GetMapping("/login")

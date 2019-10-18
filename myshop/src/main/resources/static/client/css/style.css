@@ -1351,7 +1351,7 @@ h2.resp-accordion {
     transition: all 0.5s ease-out 0s;
 }
 .link-product-add-cart {
-    background:#000 none repeat scroll 0 0;
+    background:#FDA30E none repeat scroll 0 0;
     color: #fff;
     display: inline-block;
     height: 40px;
@@ -1413,7 +1413,7 @@ h2.resp-accordion {
     top: 83.5%;
 }
 .link-product-add-cart:hover {
-    background: #FDA30E none repeat scroll 0 0;
+    background: #0000CD none repeat scroll 0 0;
     color: #fff;
 }
 /*-- //effect --*/

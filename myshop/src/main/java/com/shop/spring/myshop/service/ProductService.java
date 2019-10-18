@@ -21,4 +21,6 @@ public interface ProductService {
     Product getProductByQuery(Long productId);
 
     void save(Product product);
+
+    Page<Product> findAll(Pageable pageable);
 }
