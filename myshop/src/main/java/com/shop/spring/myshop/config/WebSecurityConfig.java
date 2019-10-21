@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.sql.DataSource;
 
@@ -41,12 +42,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.csrf().disable();
 		
-		http.authorizeRequests().antMatchers("/", "/logout").permitAll()
+		http.authorizeRequests().antMatchers("/", "/logout",
+				"/register**",
+				"/forgot-password**",
+				"/reset-password**").permitAll()
 		.and()
 
 			.formLogin().usernameParameter("username").passwordParameter("pass")
 				.loginPage("/login")
-					.permitAll();
+					.permitAll()
+				.and()
+				.logout()
+				.invalidateHttpSession(true)
+				.clearAuthentication(true)
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.logoutSuccessUrl("/login?logout")
+				.permitAll();
 		
 		http.authorizeRequests().antMatchers("/check-in").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 		http.authorizeRequests().antMatchers("/admin/product").access("hasAnyRole('ROLE_ADMIN')");

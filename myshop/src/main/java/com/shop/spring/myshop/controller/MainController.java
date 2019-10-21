@@ -125,16 +125,6 @@ public class MainController {
         return "client/login";
     }
 
-    @GetMapping("/forgot-password")
-    public String forgotPassword(Model model) {
-        return "client/forgot-password";
-    }
-
-    @GetMapping("/order")
-    public String order(Model model){
-        return "client/order";
-    }
-
     @GetMapping("/about")
     public String about(Model model){
         return "client/about";

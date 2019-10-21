@@ -10,4 +10,8 @@ public interface CategoryService {
     public List<Category> getList();
 
     List<Product> getProductbycate(Long categoryId);
+
+    Category getOne(Long categoryId);
+
+    void updateCategory(String categoryName, Long categoryId);
 }

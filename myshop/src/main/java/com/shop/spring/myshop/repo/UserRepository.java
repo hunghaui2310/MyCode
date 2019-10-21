@@ -4,6 +4,7 @@ import com.shop.spring.myshop.model.AppUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -27,5 +28,11 @@ public interface UserRepository extends JpaRepository<AppUser, Long>{
                        @Param("address") String address,
                        @Param("encrytedPassword") String encrytedPassword,
                        @Param("userId") Long userId);
+
+    @Modifying
+    @Query("update AppUser u set u.encrytedPassword = :password where u.userId = :id")
+    void updatePassword(@Param("password") String password, @Param("id") Long id);
+
+    AppUser findByEmail(String email);
 
 }

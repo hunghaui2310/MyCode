@@ -11,4 +11,6 @@ public interface CustomQuery {
     String UPDATE_USER = "update AppUser set userName = :userName, phoneNumber = :phoneNumber, email = :email, address = :address, encrytedPassword = :encrytedPassword where userId = :userId";
 
     String GET_PRODUCT_BY_CATE = "select p from Product p, Category c where categoryId = :categoryId";
+
+    String UPDATE_CATEGORY = "update Category set categoryName = :categoryName where categoryId = :categoryId";
 }

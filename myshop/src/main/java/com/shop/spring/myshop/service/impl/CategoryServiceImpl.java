@@ -24,4 +24,16 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Product> getProductbycate(Long categoryId) {
         return categoryRepo.getProbyCate(categoryId);
     }
+
+    @Override
+    public Category getOne(Long categoryId) {
+        return categoryRepo.getOne(categoryId);
+    }
+
+    @Override
+    public void updateCategory(String categoryName, Long categoryId) {
+        categoryRepo.updateCategory(categoryName, categoryId);
+    }
+
+
 }

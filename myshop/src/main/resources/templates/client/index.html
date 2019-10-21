@@ -317,25 +317,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div th:replace="~{client/header::#top-footer}"></div>
 <div th:replace="~{client/header::#footer}"></div>
 <!-- //footer -->
-
-<script type="text/javascript">
-	$(document).ready(function() {
-	$('.eBtn,.aBtn').click(function(e) {
-			e.preventDefault();
-			var href = $(this).attr('href');
-			var text = $(this).text();
-			$.get(href, function (user, status) {
-				$('#phoneNumber').val(user.phoneNumber);
-				$('#userName').val(user.userName);
-				$('#password').val(user.password);
-				$('#address').val(user.address);
-				$('#email').val(user.email);
-				$('#userId').val(user.userId);
-			});
-			$('#updateData').modal();
-
-		});
-	});
-</script>
 </body>
 </html>

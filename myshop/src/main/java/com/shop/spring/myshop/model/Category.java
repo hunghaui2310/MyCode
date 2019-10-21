@@ -1,10 +1,13 @@
 package com.shop.spring.myshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "category")
+@JsonIgnoreProperties("product")
 public class Category {
 
     @Id
@@ -15,8 +18,6 @@ public class Category {
 
     @Column(name = "category_name", nullable = false)
     private String categoryName;
-
-
 
     public Long getCategoryId() {
         return categoryId;
