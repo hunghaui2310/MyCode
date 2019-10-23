@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "file_info",uniqueConstraints = { @UniqueConstraint(name = "FILE_INFO_FK", columnNames = "product_id") })
-public class UploadModel {
+public class FileInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,15 +33,16 @@ public class UploadModel {
         this.extraField = extraField;
     }
 
-    @Column(name = "url")
-    private MultipartFile[] files;
+    @Lob
+    @Column(name = "url", length = Integer.MAX_VALUE, nullable = true)
+    private byte[] url;
 
-    public MultipartFile[] getFiles() {
-        return files;
+    public byte[] getUrl() {
+        return url;
     }
 
-    public void setFiles(MultipartFile[] files) {
-        this.files = files;
+    public void setUrl(byte[] url) {
+        this.url = url;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)

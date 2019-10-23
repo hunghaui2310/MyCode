@@ -1,33 +1,29 @@
 package com.shop.spring.myshop.dto;
 
-import java.math.BigInteger;
+public class ProductSearchDTO {
 
-public class ProductInfoDTO {
-
-    private BigInteger productId;
+    private Long productId;
     private String productName;
     private int price;
-    private String discount;
     private int numLike;
-    private byte[] url;
+    private String discount;
 
-    public ProductInfoDTO() {
-    }
+    private String categoryName;
 
-    public ProductInfoDTO(Object[] item){
-        this.productId = (BigInteger) item[0];
+    public ProductSearchDTO(Object[] item){
+        this.productId = (Long) item[0];
         this.productName = String.valueOf(item[1]);
         this.price = (int) item[2];
-        this.discount = String.valueOf(item[3]);
-        this.numLike = (int) item[4];
-        this.url = (byte[]) item[5];
+        this.numLike = (int) item[3];
+        this.discount = String.valueOf(item[4]);
+        this.categoryName = String.valueOf(item[5]);
     }
 
-    public BigInteger getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(BigInteger productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 
@@ -55,14 +51,6 @@ public class ProductInfoDTO {
         this.numLike = numLike;
     }
 
-    public byte[] getUrl() {
-        return url;
-    }
-
-    public void setUrl(byte[] url) {
-        this.url = url;
-    }
-
     public String getDiscount() {
         return discount;
     }
@@ -70,4 +58,13 @@ public class ProductInfoDTO {
     public void setDiscount(String discount) {
         this.discount = discount;
     }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
 }

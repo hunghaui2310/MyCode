@@ -7,7 +7,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "category")
-@JsonIgnoreProperties("product")
 public class Category {
 
     @Id

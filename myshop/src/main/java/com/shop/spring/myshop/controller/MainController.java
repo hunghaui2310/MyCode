@@ -1,8 +1,11 @@
 package com.shop.spring.myshop.controller;
 
+import com.shop.spring.myshop.dto.ProductInfoDTO;
+import com.shop.spring.myshop.dto.ProductSearchDTO;
 import com.shop.spring.myshop.model.AppUser;
 import com.shop.spring.myshop.model.Product;
 import com.shop.spring.myshop.service.CategoryService;
+import com.shop.spring.myshop.service.ProductCustomService;
 import com.shop.spring.myshop.service.ProductService;
 import com.shop.spring.myshop.service.impl.AppUserServiceImpl;
 import com.shop.spring.myshop.utils.WebUtils;
@@ -28,12 +31,16 @@ public class MainController {
     private ProductService productService;
 
     @Autowired
+    private ProductCustomService productCustomService;
+
+    @Autowired
     private AppUserServiceImpl appUserService;
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String homePage(Model model, @RequestParam(name = "page", defaultValue = "0") Integer page) {
         Pageable pageable = PageRequest.of(page, 12);
-        Page<Product> pages = productService.findAll(pageable);
+        Page<ProductInfoDTO> pages = productCustomService.getProHasImage(pageable);
+
         int current = pages.getNumber() + 1;
         long total = pages.getTotalPages();
         long totalElement = pages.getTotalElements();
@@ -74,7 +81,8 @@ public class MainController {
     public String search(Model model, @RequestParam(name = "page", defaultValue = "0") Integer page,
                          @RequestParam(name = "search-text", defaultValue = "") String text) {
         Pageable pageable = PageRequest.of(page, 16);
-        Page<Product> pages = productService.searchProduct(pageable,text);
+ //       Page<Product> pages = productService.searchProduct(pageable,text);
+        Page<ProductSearchDTO> pages = productCustomService.searchProductAndCate(pageable,text);
         int current = pages.getNumber() + 1;
         long total = pages.getTotalPages();
         long totalElement = pages.getTotalElements();
@@ -97,7 +105,7 @@ public class MainController {
         if (total > 6 && current < total - 5) {
             checkLast = true;
         }
-        String baseUrl = "/search/?page=";
+        String baseUrl = "/search?page=";
         String searchUrl = "&search-text=" + text;
         model.addAttribute("beginIndex", begin);
         model.addAttribute("endIndex", end);
@@ -106,7 +114,7 @@ public class MainController {
         model.addAttribute("totalElement", totalElement);
         model.addAttribute("baseUrl", baseUrl);
         model.addAttribute("listProduct", pages);
-        model.addAttribute("users", appUserService.findAll());
+//        model.addAttribute("users", appUserService.findAll());
         model.addAttribute("extra", extra);
         model.addAttribute("searchUrl", searchUrl);
         model.addAttribute("checkLast", checkLast);

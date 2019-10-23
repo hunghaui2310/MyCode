@@ -23,7 +23,7 @@ public class Product {
     private String description;
 
     @Column(name = "num_like")
-    private Long numLike;
+    private int numLike;
 
     public String getCreateDate() {
         return createDate;
@@ -35,6 +35,12 @@ public class Product {
 
     @Column(name = "create_date", nullable = false)
     private String createDate;
+
+    @Column(name = "discount")
+    private String discount;
+
+    @Column(name = "link")
+    private String linkProduct;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
@@ -72,15 +78,31 @@ public class Product {
         this.description = description;
     }
 
-    public Long getNumLike() {
+    public Product() {
+    }
+
+    public int getNumLike() {
         return numLike;
     }
 
-    public void setNumLike(Long numLike) {
+    public void setNumLike(int numLike) {
         this.numLike = numLike;
     }
 
-    public Product() {
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public String getLinkProduct() {
+        return linkProduct;
+    }
+
+    public void setLinkProduct(String linkProduct) {
+        this.linkProduct = linkProduct;
     }
 
     public int getPrice() {
@@ -91,7 +113,7 @@ public class Product {
         this.price = price;
     }
 
-    public Product(String productName, int price, String description, Long numLike, String createDate, Category category) {
+    public Product(String productName, int price, String description, int numLike, String createDate, Category category) {
         this.productName = productName;
         this.price = price;
         this.description = description;

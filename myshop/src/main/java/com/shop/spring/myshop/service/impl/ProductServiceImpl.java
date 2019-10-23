@@ -1,9 +1,7 @@
 package com.shop.spring.myshop.service.impl;
 
-import com.shop.spring.myshop.dto.ProductInfoDTO;
 import com.shop.spring.myshop.model.Product;
 import com.shop.spring.myshop.repo.ProductRepo;
-import com.shop.spring.myshop.repo.impl.ProductRepoImpl;
 import com.shop.spring.myshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,7 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {

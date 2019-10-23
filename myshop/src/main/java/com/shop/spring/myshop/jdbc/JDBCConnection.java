@@ -48,7 +48,7 @@ public class JDBCConnection {
                 product.setPrice(rs.getInt("price"));
                 product.setDescription(rs.getString("des"));
                 product.setCreateDate(rs.getString("create_date"));
-                product.setNumLike(rs.getLong("num_like"));
+                product.setNumLike(rs.getInt("num_like"));
                 lstProduct.add(product);
             }
         }catch (SQLException e){

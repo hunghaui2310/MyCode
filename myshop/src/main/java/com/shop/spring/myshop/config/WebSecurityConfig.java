@@ -52,12 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginPage("/login")
 					.permitAll()
 				.and()
-				.logout()
-				.invalidateHttpSession(true)
-				.clearAuthentication(true)
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/login?logout")
-				.permitAll();
+				.logout().logoutUrl("/logout").logoutSuccessUrl("/");
+
 		
 		http.authorizeRequests().antMatchers("/check-in").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 		http.authorizeRequests().antMatchers("/admin/product").access("hasAnyRole('ROLE_ADMIN')");
