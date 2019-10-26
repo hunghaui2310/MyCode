@@ -28,6 +28,13 @@
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
+      <script type="text/javascript">
+          $(document).ready(function(){
+              $('#productName').autocomplete({
+                  source : '/'
+              });
+          });
+      </script>
     <![endif]-->
   </head>
 
@@ -185,6 +192,19 @@
                                       <option>8 Per Page</option>
                                       <option>10 Per Page</option>
                                   </select>
+                              </div>
+
+                              <div class="row">
+                                  <form th:action="@{/admin/product(page=0)}" method="get">
+                                      <div class="col-lg-4" style="width: 90%; float: left; height: 100%; ">
+                                          <input type="fa-search" class="search" id="productName"
+                                                 aria-describedby="search-box" placeholder="Tìm kiếm...">
+                                      </div>
+                                      <div class="sear-sub">
+                                          <input type="submit" value=" ">
+                                      </div>
+                                      <div class="clearfix"></div>
+                                  </form>
                               </div>
 
                               <div class="pull-right">

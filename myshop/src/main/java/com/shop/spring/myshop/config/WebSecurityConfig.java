@@ -57,13 +57,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests().antMatchers("/check-in").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 		http.authorizeRequests().antMatchers("/admin/product").access("hasAnyRole('ROLE_ADMIN')");
-		http.authorizeRequests().antMatchers("/product-detail").access("hasAnyRole('ROLE_ADMIN')");
 		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
 		// Cấu hình Remember Me.
 		http.authorizeRequests().and() //
 				.rememberMe().tokenRepository(this.persistentTokenRepository()) //
 				.tokenValiditySeconds(1 * 24 * 60 * 60);
+
 
 	}
 	
